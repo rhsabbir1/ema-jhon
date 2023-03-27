@@ -1,0 +1,10 @@
+.single-product {
+    width: 300px;
+    height: 508px;
+    border: 1px solid silver;
+}
+
+.single-product img {
+    height: 286px;
+    width: 100%;
+}

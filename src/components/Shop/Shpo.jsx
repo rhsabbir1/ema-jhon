@@ -14,7 +14,7 @@ const Shpo = () => {
 
     return (
         <div className='shpo-continer'>
-            <div>
+            <div className='product-container'>
                 {
                    products.map(product =><Products
                    key={product.id}
@@ -22,7 +22,7 @@ const Shpo = () => {
                    ></Products>) 
                 }
             </div>
-            <div>
+            <div className='oder-container'>
                 <h2>Order Summary</h2>
             </div>
         </div>
