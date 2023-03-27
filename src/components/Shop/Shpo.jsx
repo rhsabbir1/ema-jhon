@@ -12,6 +12,10 @@ const Shpo = () => {
         .then(data => setProducts(data))
     }, [])
 
+    const handleAddToCart = (product)=>{
+        console.log(product)
+    }
+
     return (
         <div className='shpo-continer'>
             <div className='product-container'>
@@ -19,6 +23,7 @@ const Shpo = () => {
                    products.map(product =><Products
                    key={product.id}
                    product={product}
+                   handleAddToCart={handleAddToCart}
                    ></Products>) 
                 }
             </div>
