@@ -5,6 +5,7 @@ import Products from './../Products/Products';
 const Shpo = () => {
 
     const [products , setProducts] = useState([])
+    const [cart ,setCart] = useState([])
 
     useEffect(()=>{
         fetch('products.json')
@@ -13,7 +14,8 @@ const Shpo = () => {
     }, [])
 
     const handleAddToCart = (product)=>{
-        console.log(product)
+        const newCart = [...cart , product];
+        setCart(newCart)
     }
 
     return (
@@ -29,6 +31,7 @@ const Shpo = () => {
             </div>
             <div className='oder-container'>
                 <h2>Order Summary</h2>
+                <p>Selected Items: {cart.length}</p>
             </div>
         </div>
     );
