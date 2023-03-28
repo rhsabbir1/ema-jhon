@@ -10,15 +10,17 @@ const Cart = ({cart}) => {
         shipping = shipping + product.shipping;
     }
 
+    const tax = total * 7 /100;
+    const grandTotal = total + shipping + tax;
 
     return (
-        <div className='oder-container'>
+        <div className='oder-containe'>
              <h2>Order Summary</h2>
              <p>Selected Items: {cart.length}</p>
              <p>Total Price: ${total}</p>
              <p>Total Shipping Charge: {shipping}</p>
-             <p>Tax: $114</p>
-             <h5>Grand Total: $1559</h5>
+             <p>Tax: ${tax.toFixed(2)}</p>
+             <h5>Grand Total: ${grandTotal.toFixed(2)}</h5>
         </div>
     );
 };
