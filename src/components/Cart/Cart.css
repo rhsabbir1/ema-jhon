@@ -1,0 +1,10 @@
+.oder-container{
+    background: rgba(255, 153, 0, 0.3);
+    padding: 40px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+.oder-container h2{
+    font-size: 22px;
+}

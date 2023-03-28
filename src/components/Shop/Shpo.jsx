@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Shop.css';
 import Products from './../Products/Products';
+import Cart from '../Cart/Cart';
 
 const Shpo = () => {
 
@@ -29,9 +30,8 @@ const Shpo = () => {
                    ></Products>) 
                 }
             </div>
-            <div className='oder-container'>
-                <h2>Order Summary</h2>
-                <p>Selected Items: {cart.length}</p>
+            <div>
+                <Cart cart={cart}></Cart>
             </div>
         </div>
     );
