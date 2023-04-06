@@ -15,23 +15,27 @@ const Shpo = () => {
         .then(data => setProducts(data))
     }, [])
 
-    useEffect(()=>{
-        const storeCard = getShoppingCart()
-        // step 1 get id 
-        for (const id in storeCard){
-            const addedProduct = products.find(product => product.id == id)
-            if(addedProduct){
-                const quantity = addedProduct[id]
-            addedProduct.quantity = quantity;
-            }
-        }
-    },[products])
 
     const handleAddToCart = (product)=>{
         const newCart = [...cart , product];
         setCart(newCart)
         addToDb(product.id)
     }
+    useEffect(()=>{
+        console.log(products)
+        const storeCart = getShoppingCart()
+        const saveCart =[]
+        for(const id in storeCart){
+            const addedProduct = products.find(product=> product.id === id)
+          if(addedProduct){
+              const quantity = storeCart[id];
+             addedProduct.quantity =quantity;
+             saveCart.push(addedProduct)
+          }
+                          
+        }
+        setCart[saveCart]
+    },[products])
 
     return (
         <div className='shpo-continer'>
